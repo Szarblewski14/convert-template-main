@@ -8,6 +8,8 @@ const currency = document.getElementById("currency")
 const form = document.querySelector("form")
 const footer = document.querySelector("main footer")
 const description = document.getElementById("description")
+const result = document.getElementById("result")
+
 
 
 //Valida para apenas aparecer números no input
@@ -38,6 +40,12 @@ function convertCurrency(amount, price, symbol){
     try {
         // Exibindo a cotação da moeda selecionada
         description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
+
+        // calcula o total
+        let total = amount * price
+
+        // Exibe o resultado total
+        result.textContent = total
 
         // Aplica uma classe que exibe o footer
         footer.classList.add("show-result")
